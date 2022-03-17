@@ -1,0 +1,16 @@
+1 - Get addresses from Propstream
+	potential problems
+	a)Unpredictable elements
+	b)Overflow of addresses
+	c)Multiple logins
+	d)
+2 - Phone numbers via addy via USPhonebook
+	potential problems
+	a)CAPTCHA
+	b)CAPTCHA unpredictability
+	b)Ads?
+	d)Variable amounts of phone numbers
+	e)
+	
+
+

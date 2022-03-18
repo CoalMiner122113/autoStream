@@ -109,6 +109,7 @@ def getTableData(bodyNum, rowNum):
     arr[((bodyNum-1)*40)+rowNum-1] = team(name, (adjEM), (luck), (sos))
     print("array " + str((bodyNum-1)*40+rowNum-1) + " is " + str(arr[((bodyNum-1)*40)+rowNum-1]) )
 
+
 #Oddly crucial option instantiation (also in driver declaration)
 options = webdriver.ChromeOptions()
 options.add_experimental_option('excludeSwitches', ['enable-logging'])
@@ -143,14 +144,22 @@ while(bodyNum<10):
     
     bodyNum+=1
 
+def getTeam(name1):
+    retTeam = team ("Error",0,0,0)
+    for teams in arr:
+        if (teams.name == name1):
+            retTeam = teams
+    return retTeam      
+        
+    
 
 #Have to Hard Code the seeding, can't fix unless I pull seed names from another website and do an array search by name
 
 def tourney():
-    roundA = [arr[0],arr[149],arr[28],arr[27],arr[17],arr[81],arr[19],arr[57],arr[24],arr[51],arr[8],arr[123],arr[38],arr[40],arr[11],arr[148]]
-    roundB = [arr[3],arr[167],arr[29],arr[47],arr[15],arr[34],arr[7],arr[133],arr[14],arr[21],arr[13],arr[145],arr[26],arr[20],arr[2],arr[116]]
-    roundC = [arr[5],arr[182],arr[22],arr[52],arr[12],arr[83],arr[49],arr[68],arr[18],arr[45],arr[32],arr[118],arr[41],arr[58],arr[9],arr[143]]
-    roundD = [arr[1],arr[174],arr[39],arr[36],arr[4],arr[46],arr[16],arr[69],arr[33],arr[31],arr[6],arr[139],arr[30],arr[23],arr[10],arr[144]]
+    roundA = [ getTeam("Gonzaga"),getTeam("Gonzaga"),getTeam("Memphis"),getTeam("Memphis"),getTeam("New Mexico St."),getTeam("New Mexico St."),getTeam("Arkansas"),getTeam("Vermont"),getTeam("Alabama"),getTeam("Notre Dame"),getTeam("Texas Tech"),getTeam("Montana St."),getTeam("Michigan St."),getTeam("Davidson"),getTeam("Duke"),getTeam("Cal St. Fullerton")]
+    roundB = [ getTeam("Baylor"),getTeam("Baylor"),getTeam("North Carolina"),getTeam("North Carolina"),getTeam("Saint Mary's"),getTeam("Saint Mary's"),getTeam("UCLA"),getTeam("Akron"),getTeam("Texas"),getTeam("Virginia Tech"),getTeam("Purdue"),getTeam("Yale"),getTeam("Murray St."),getTeam("San Francisco"),getTeam("Saint Peter's"),getTeam("Saint Peter's")]
+    roundC = [ getTeam("Arizona"),getTeam("Wright St."),getTeam("Seton Hall"),getTeam("TCU"),getTeam("Houston"),getTeam("UAB"),getTeam("Illinois"),getTeam("Chattanooga"),getTeam("Michigan"),getTeam("Michigan"),getTeam("Tennessee"),getTeam("Tennessee"),getTeam("Ohio St. "),getTeam("Loyola Chicago"),getTeam("Villanova"),getTeam("Delaware")]
+    roundD = [ getTeam("Kansas"),getTeam("Texas Southern"),getTeam("Creighton"),getTeam("Creighton"),getTeam("Richmond"),getTeam("Richmond"),getTeam("Providence"),getTeam("Providence"),getTeam("LSU"),getTeam("Iowa St."),getTeam("Wisconsin"),getTeam("Colgate"),getTeam("USC"),getTeam("Miami Fl"),getTeam("Auburn"),getTeam("Jacksonville St.")]
     brackets = [roundA, roundB, roundD, roundC]
     bracketNum = 0
     while(bracketNum < 4):
@@ -296,6 +305,8 @@ def tourney():
         elif(fact >= winner2.probability):
             winnerOVA = winner2
             print("The BC winner2 is "+ winnerOVA.name + "at probability"+ str(winnerOVA.probability)+" with ran = "+str(fact) )
+
+print(getTeam("Gonzaga").name)
 
 keepRun = 'true'
 while(keepRun != 'stop'):

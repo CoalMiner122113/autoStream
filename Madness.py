@@ -89,7 +89,6 @@ def statStrToFloat(statLine):
         return float(statLine)
 
 def getTableData(bodyNum, rowNum):
-
     tdXpath = '//*[@id="ratings-table"]/tbody['+str(bodyNum) + ']'+'/tr[' + str(rowNum) + ']'
     tdNum = 2
     tdXpath += '/td[' +str(tdNum) + ']'
@@ -156,7 +155,7 @@ def getTeam(name1):
 #Have to Hard Code the seeding, can't fix unless I pull seed names from another website and do an array search by name
 
 def tourney():
-    roundA = [ getTeam("Gonzaga"),getTeam("Gonzaga"),getTeam("Memphis"),getTeam("Memphis"),getTeam("New Mexico St."),getTeam("New Mexico St."),getTeam("Arkansas"),getTeam("Vermont"),getTeam("Alabama"),getTeam("Notre Dame"),getTeam("Texas Tech"),getTeam("Montana St."),getTeam("Michigan St."),getTeam("Davidson"),getTeam("Duke"),getTeam("Cal St. Fullerton")]
+    roundA = [ getTeam("Gonzaga"),getTeam("Gonzaga"),getTeam("Memphis"),getTeam("Memphis"),getTeam("New Mexico St."),getTeam("New Mexico St."),getTeam("Arkansas"),getTeam("Arkansas"),getTeam("Alabama"),getTeam("Notre Dame"),getTeam("Texas Tech"),getTeam("Montana St."),getTeam("Michigan St."),getTeam("Davidson"),getTeam("Duke"),getTeam("Cal St. Fullerton")]
     roundB = [ getTeam("Baylor"),getTeam("Baylor"),getTeam("North Carolina"),getTeam("North Carolina"),getTeam("Saint Mary's"),getTeam("Saint Mary's"),getTeam("UCLA"),getTeam("Akron"),getTeam("Texas"),getTeam("Virginia Tech"),getTeam("Purdue"),getTeam("Yale"),getTeam("Murray St."),getTeam("San Francisco"),getTeam("Saint Peter's"),getTeam("Saint Peter's")]
     roundC = [ getTeam("Arizona"),getTeam("Wright St."),getTeam("Seton Hall"),getTeam("TCU"),getTeam("Houston"),getTeam("UAB"),getTeam("Illinois"),getTeam("Chattanooga"),getTeam("Michigan"),getTeam("Michigan"),getTeam("Tennessee"),getTeam("Tennessee"),getTeam("Ohio St. "),getTeam("Loyola Chicago"),getTeam("Villanova"),getTeam("Delaware")]
     roundD = [ getTeam("Kansas"),getTeam("Texas Southern"),getTeam("Creighton"),getTeam("Creighton"),getTeam("Richmond"),getTeam("Richmond"),getTeam("Providence"),getTeam("Providence"),getTeam("LSU"),getTeam("Iowa St."),getTeam("Wisconsin"),getTeam("Colgate"),getTeam("USC"),getTeam("Miami Fl"),getTeam("Auburn"),getTeam("Jacksonville St.")]
